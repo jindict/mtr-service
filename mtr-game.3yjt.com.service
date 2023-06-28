@@ -1,0 +1,14 @@
+#/etc/systemd/system
+[Unit]
+Description=mtr-game.3yjt.com.service monitor
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/ldap_users/ginn_lai/mtr/mmtr.sh 5 game.3yjt.com >> \
+ /home/ldap_users/ginn_lai/mtr/mtr-game.3yjt.com.log
+KillMode=process
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=multi-user.target
